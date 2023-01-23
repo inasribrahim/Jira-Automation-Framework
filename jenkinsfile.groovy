@@ -11,16 +11,11 @@ pipeline {
             }
         }
          stage('Qualtiy Qate') {
-            steps{
+             steps{
                  timeout(time:2 , unit: 'MINUTES'){
-                    def qualtiyGate = waitForQualityGate();
-
-                    if (qualtiyGate.status() != 'OK')
-                     {
-                        error "Pipeline abroted due to quality gate not passed :(s"
-                     }
+                     waitForQualityGate abortPipeline:true
                  }
-            }   
+             }
          }
     }
 }
