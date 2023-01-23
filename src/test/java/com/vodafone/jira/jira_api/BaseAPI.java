@@ -21,16 +21,13 @@ public class BaseAPI{
     protected final int FORBIDDEN = 403;
     protected final int NOT_FOUND = 404;
     protected final int METHOD_NOT_ALLOWED = 405;
+    String WksMASDL212321312= "";
     CredentialsPayload credentialsPayload ;
     Project project ;
     IssueType issueType ;
     Payload payload ;
     Fields fields;
-    CredentialsPayload credentialsPayload1 ;
-    Project project1 ;
-    IssueType issueType1 ;
-    Payload payload1 ;
-    Fields fields1;
+
     protected void isSuccessfulResponse(int actualStatusCode) throws IOException {
         if (actualStatusCode != OK_STATUS_CODE) {
             throw new IOException("Request Failed with status code= "+actualStatusCode);
@@ -74,17 +71,6 @@ public class BaseAPI{
     }
 
     protected String createAuthenticateLoginJsonPayload(String username, String password){
-        credentialsPayload = new CredentialsPayload(username,password);
-        ObjectMapper objMapper = new ObjectMapper();
-        String username_password_json = null ;
-        try {
-            username_password_json = objMapper.writerWithDefaultPrettyPrinter().writeValueAsString(credentialsPayload);
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
-        }
-        return username_password_json;
-    }
-    protected String createAuthenticateLoginJsonPayloadDu(String username, String password){
         credentialsPayload = new CredentialsPayload(username,password);
         ObjectMapper objMapper = new ObjectMapper();
         String username_password_json = null ;
