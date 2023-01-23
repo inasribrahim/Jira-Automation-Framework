@@ -11,9 +11,8 @@ public class IssueStepDefs {
 
     IssuesApi issuesApi = new IssuesApi();
     @Given("user enter project key {string}, summary {string}, description {string} and issue type {string}")
-    public void userCreateIssueWithProjectKeyAndSummaryAndDescriptionAndIssueType(String PSDAd2, String summary, String description, String issueType) throws IOException {
-        Thread.sleep(5000);
-        issuesApi.createIssue(PSDAd2,summary,description,issueType);
+    public void userCreateIssueWithProjectKeyAndSummaryAndDescriptionAndIssueType(String projectKey, String summary, String description, String issueType){
+        issuesApi.createIssue(projectKey,summary,description,issueType);
     }
 
 
