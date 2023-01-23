@@ -4,11 +4,9 @@ pipeline {
     stages {
         stage('Scan') {
             steps {
-               dir('Api-Automation-Framework/Api-Task/'){
                    withSonarQubeEnv(installationName:'sonarQube'){
                 bat (''' mvn clean verify sonar:sonar -Dsonar.projectKey=API_Automation  ''')
-               } 
-                   
+ 
                }
             }
         }
