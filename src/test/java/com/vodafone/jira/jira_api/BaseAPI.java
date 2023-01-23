@@ -84,6 +84,17 @@ public class BaseAPI{
         }
         return username_password_json;
     }
+    protected String createAuthenticateLoginJsonPayloadDu(String username, String password){
+        credentialsPayload = new CredentialsPayload(username,password);
+        ObjectMapper objMapper = new ObjectMapper();
+        String username_password_json = null ;
+        try {
+            username_password_json = objMapper.writerWithDefaultPrettyPrinter().writeValueAsString(credentialsPayload);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        return username_password_json;
+    }
 
     protected String createIssueJsonPayload(String key , String summaryName , String descriptionName , String issueTypeName){
         project = new Project(key);
@@ -99,5 +110,5 @@ public class BaseAPI{
         }
         return issue_json;
     }
-
+//any thing
 }
