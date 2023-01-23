@@ -26,7 +26,11 @@ public class BaseAPI{
     IssueType issueType ;
     Payload payload ;
     Fields fields;
-
+    CredentialsPayload credentialsPayload1 ;
+    Project project1 ;
+    IssueType issueType1 ;
+    Payload payload1 ;
+    Fields fields1;
     protected void isSuccessfulResponse(int actualStatusCode) throws IOException {
         if (actualStatusCode != OK_STATUS_CODE) {
             throw new IOException("Request Failed with status code= "+actualStatusCode);
