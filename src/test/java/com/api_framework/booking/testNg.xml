@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Orange Human Resource Web Application">
+    <test name="Smoke Test">
+        <classes>
+            <class name="com.api_framework.booking.tests.Tests"/>
+        </classes>
+    </test> <!-- Test -->
+</suite> <!-- Suite -->

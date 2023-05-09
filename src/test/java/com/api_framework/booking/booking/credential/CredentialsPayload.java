@@ -1,4 +1,4 @@
-package com.vodafone.jira.jira_api;
+package com.api_framework.booking.booking.credential;
 
 public class CredentialsPayload {
 
